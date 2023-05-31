@@ -3,6 +3,8 @@ import './App.css';
 import Header from './components/Header';
 import { SimpleSlider } from './components/Slider';
 import Main from './components/Main';
+import Footer from './components/Footer';
+
 
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
       <Header />
       <SimpleSlider />
       <Main />
+      <Footer />
     </div>
   );
 }
