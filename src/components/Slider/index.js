@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "./slick.css";
 import "./slick-theme.css";
 
-export const SimpleSlider = () => {
+export function SimpleSlider(){
     const settings = {
         dots: true,
         infinite: true,
