@@ -4,6 +4,7 @@ import './form-usuario.css'
 
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import Box from '@mui/material/Box';
 
 
 import React, { useState } from 'react';
@@ -38,17 +39,18 @@ const FormUsuario = () => {
       });
 
       if (response.ok) {
-        // La petición fue exitosa
+
         console.log('Usuario creado correctamente');
-        // Aquí puedes realizar cualquier acción adicional después de crear el usuario
+        // Agregar aquí la redirección a la página de inicio de sesión en caso de ser cliente y en caso de ser usuario administrador a la lista de usuarios
+
       } else {
-        // La petición no fue exitosa
+
         console.error('Error al crear el usuario');
-        // Aquí puedes manejar el error de acuerdo a tus necesidades
+        // Errores a manejar....
       }
     } catch (error) {
       console.error('Error en la solicitud', error);
-      // Aquí puedes manejar el error de acuerdo a tus necesidades
+      // Corregir esto, agregar el manejo de errores, pendiente!!!!
     }
   };
 
@@ -68,7 +70,7 @@ const FormUsuario = () => {
           margin="normal"
         />
 
-        <br />
+
 
         <TextField
           required
@@ -81,7 +83,7 @@ const FormUsuario = () => {
           margin="normal"
         />
 
-        <br />
+
 
 
         <TextField
@@ -95,7 +97,7 @@ const FormUsuario = () => {
           margin="normal"
         />
 
-        <br />
+
 
 
         <TextField
@@ -109,8 +111,6 @@ const FormUsuario = () => {
           margin="normal"
         />
 
-        <br />
-
         <TextField
           required
           id="rol"
@@ -122,7 +122,7 @@ const FormUsuario = () => {
           margin="normal"
         />
 
-        <br />
+
 
         <TextField
           required
@@ -134,11 +134,15 @@ const FormUsuario = () => {
           fullWidth
           margin="normal"
         />
-        <br />
-        <Button
-          size="large"
-          variant="contained"
-          type="submit">Registrarse</Button>
+
+        <Box sx={{ '& > :not(style)': { m: 5 } }}>
+          <Button size="large" variant="contained" type="submit">
+            Registrarse
+          </Button>
+          <Button size="large" variant="contained" type="submit" color='error'>
+            Cancelar
+          </Button>
+        </Box>
       </form>
     </Container>
   );
