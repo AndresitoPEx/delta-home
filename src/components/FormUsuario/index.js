@@ -1,13 +1,10 @@
-
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './form-usuario.css';
 import { Container } from '@mui/material';
-import './form-usuario.css'
-
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Box from '@mui/material/Box';
-
-
-import React, { useState } from 'react';
 
 const FormUsuario = () => {
   const [nombre, setNombre] = useState('');
@@ -16,6 +13,12 @@ const FormUsuario = () => {
   const [clave, setClave] = useState('');
   const [rol, setRol] = useState('');
   const [usuario, setUsuario] = useState('');
+
+  const navigate = useNavigate();
+
+  const handleCancelar = () => {
+    navigate('/');
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,26 +42,27 @@ const FormUsuario = () => {
       });
 
       if (response.ok) {
-
         console.log('Usuario creado correctamente');
-        // Agregar aquí la redirección a la página de inicio de sesión en caso de ser cliente y en caso de ser usuario administrador a la lista de usuarios
 
+        alert('Registro Exitoso');
+        // Redireccionar
+        navigate('/listar-usuarios');
       } else {
-
         console.error('Error al crear el usuario');
-        // Errores a manejar....
+
       }
     } catch (error) {
       console.error('Error en la solicitud', error);
-      // Corregir esto, agregar el manejo de errores, pendiente!!!!
+
     }
   };
 
+
   return (
-    <Container maxWidth="md">
-      <form className="form" onSubmit={handleSubmit}>
-
-
+    <Container className="form" maxWidth="md">
+      <h1>Registre sus datos</h1>
+      <form onSubmit={handleSubmit}>
+        <p className='mensaje'>Los campos marcados con * son obligatorios</p>
         <TextField
           required
           id="nombre"
@@ -69,9 +73,6 @@ const FormUsuario = () => {
           fullWidth
           margin="normal"
         />
-
-
-
         <TextField
           required
           id="apellidos"
@@ -82,10 +83,6 @@ const FormUsuario = () => {
           fullWidth
           margin="normal"
         />
-
-
-
-
         <TextField
           required
           id="email"
@@ -96,10 +93,6 @@ const FormUsuario = () => {
           fullWidth
           margin="normal"
         />
-
-
-
-
         <TextField
           required
           id="clave"
@@ -110,23 +103,19 @@ const FormUsuario = () => {
           fullWidth
           margin="normal"
         />
-
         <TextField
           required
           id="rol"
           label="Rol"
-          type="number"
+          type="text"
           value={rol}
           onChange={(e) => setRol(e.target.value)}
           fullWidth
           margin="normal"
         />
-
-
-
         <TextField
           required
-          id="nick-usuario"
+          id="usuario"
           label="Usuario"
           type="text"
           value={usuario}
@@ -134,12 +123,21 @@ const FormUsuario = () => {
           fullWidth
           margin="normal"
         />
+        {/* Agregar un espacio para el campo repetir clave y los campos Rol y Usuario deben ser modificados*/}
 
         <Box sx={{ '& > :not(style)': { m: 5 } }}>
-          <Button size="large" variant="contained" type="submit">
+          <Button
+            size="large"
+            variant="contained"
+            type="submit">
             Registrarse
           </Button>
-          <Button size="large" variant="contained" type="submit" color='error'>
+
+          <Button
+            size="large"
+            variant="contained"
+            onClick={handleCancelar}
+            color='error'>
             Cancelar
           </Button>
         </Box>

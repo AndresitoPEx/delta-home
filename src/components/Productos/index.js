@@ -26,7 +26,7 @@ const ListarProductos = ({ url }) => {
               <h4>{producto.nombre}</h4>
               <p>{producto.descripcion}</p>
               <p>S/.{producto.precio}</p>
-              <button className="btn-comprar">Comprar</button>
+              <button className="btn-comprar">Ver Detalles</button>
             </div>
           );
         })}

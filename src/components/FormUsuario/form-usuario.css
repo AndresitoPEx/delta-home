@@ -1,3 +1,14 @@
 .form{
-    padding: 5rem 0;
+    padding: 3rem 0;
+}
+.btn-registrar{
+    text-decoration: none;
+    color: #fff;
+}
+.mensaje{
+    color: red;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+    text-align: left;
 }

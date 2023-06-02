@@ -9,8 +9,8 @@ const Footer = () => {
                 </div>
                 <div className="footer__contact">
                     <h3>Contáctanos</h3>
-                    <p>Av. Los Pinos 123, San Isidro</p>
-                    <p>999 888 777</p>
+                    <p>Urbanizacion Sta. Elvira, Ate 15011</p>
+                    <p>930172021</p>
                 </div>
                 <div className="footer__social">
                     <h3>Síguenos</h3>

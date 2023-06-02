@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+/*"react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",*/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

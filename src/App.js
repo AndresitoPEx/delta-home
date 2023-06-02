@@ -15,17 +15,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <Header />
-      
+
+
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={
             <>
               <SimpleSlider />
               <Main />
             </>
-          }  />
-          
+          }/>
           <Route path="/registrar-usuario" element={<FormUsuario />} />
           <Route path="/listar-usuarios" element={<ListarUsuarios />} />
         </Routes>
