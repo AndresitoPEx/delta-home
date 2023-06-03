@@ -1,8 +1,9 @@
 import './customSlider.css'
+
 import Slider from "react-slick";
 
-import "./slick.css";
-import "./slick-theme.css";
+import './slick.css'
+import './slick-theme.css'
 
 export function SimpleSlider(){
     const settings = {
