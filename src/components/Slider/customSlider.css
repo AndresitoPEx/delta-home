@@ -1,9 +1,10 @@
 .slider-wrapper {
     overflow-x: hidden;
+
   }
 .slider-image {
     width: 100%; 
-    height: 600px;
+    height: 700px;
     object-fit: cover;
     object-position: center;
     box-sizing: border-box;
